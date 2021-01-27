@@ -28,12 +28,93 @@
                     transform: translateY(5px);
                 }
             }
-            .view-code {
-                padding: 1rem;
-                @include primary-font(0.9rem, 500);
+
+            .type-and-code {
+                @include flex(flex-end, center, row);
+                padding: 1rem 0rem;
+
+                h3 {
+                    @include secondary-font(0.7rem, 400);
+                    letter-spacing: 2px;
+                    color: $white;
+                    cursor: pointer;
+                }
+                .view-code {
+                    margin-left: 10px;
+                    @include primary-font(0.9rem, 500);
                     letter-spacing: 2px;
                     color: white;
                     text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-device-width: 813px) and (max-device-width: 1290px) {
+    .project-list {
+        width: 45%;
+        .hider {
+            .links {
+                @include flex(flex-start, center, column);
+                padding: 0.5rem 0;
+                .project-item {
+                    padding: 0 0 0.2rem 0;
+
+                    h3 {
+                        font-size: 0.6rem;
+                    }
+                    h1 {
+                        font-size: 2.1rem;
+                    }
+                }
+
+                .type-and-code {
+                    padding: 0;
+                    margin-left: 30px;
+                    h3 {
+                        transform: translateY(2px);
+                        font-size: 0.6rem;
+                    }
+                    .view-code {
+                        font-size: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Phone portrait
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and(orientation: portrait) {
+    .project-list {
+        width: 100%;
+        .hider {
+            .links {
+                @include flex(flex-start, center, column);
+                padding: 0.5rem 0;
+                .project-item {
+                    padding: 0 0 0.2rem 0;
+
+                    h3 {
+                        font-size: 0.6rem;
+                    }
+                    h1 {
+                        font-size: 2.1rem;
+                    }
+                }
+
+                .type-and-code {
+                    padding: 0;
+                    margin-left: 30px;
+                    h3 {
+                        transform: translateY(2px);
+                        font-size: 0.6rem;
+                    }
+                    .view-code {
+                        font-size: 0.5rem;
+                    }
+                }
             }
         }
     }

@@ -14,13 +14,14 @@
         .line {
             height: 1px;
             background: $black;
-            width: 35px;
+            width: 3%;
             transform-origin: 0% 50%;
         }
     }
     .right {
         @include flex(center, space-between, row);
         width: 18%;
+        min-width: 250px;
         a {
             @include secondary-font($fsLinks-desktop, 400);
             text-decoration: none;
@@ -64,5 +65,53 @@
 
     .right a {
         color: $white;
+    }
+}
+
+
+//
+@media only screen 
+and (min-device-width: 813px) 
+and (max-device-width: 1080px) {
+    .footer {
+        .left {
+            .title {
+                font-size: $fsLocation-tablet;
+            }
+        }
+        .right {
+            a {
+                font-size: $fsLinks-phone;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
+    .footer {
+        @include flex(flex-start, flex-start, column);
+        .left {
+            width: auto;
+            margin-bottom: 10px;
+            .title {
+                font-size: $fsLocation-phone
+            }
+            .line {
+                display: none;
+            }
+        }
+        .right {
+            width: 210px;
+            min-width: 210px;
+            a {
+                font-size: $fsLinks-phone;
+                font-weight: 500;
+            }
+        }
     }
 }

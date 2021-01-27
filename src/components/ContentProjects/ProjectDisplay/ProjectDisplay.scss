@@ -51,3 +51,41 @@
         }
     }
 }
+
+
+@media only screen 
+and (min-device-width: 813px) 
+and (max-device-width: 1290px) {
+    .project-display {
+        .current-project {
+
+            .images {
+                @include flex(center, center, row);
+            }
+            .jlc {
+                img:first-child {
+                    display: none;
+                }
+                img:last-child {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .technologies {
+                h4 {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
+    .project-display {
+        display: none;
+    }
+}

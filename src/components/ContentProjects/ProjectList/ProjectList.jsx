@@ -18,7 +18,7 @@ export const ProjectList = ({ list, hoveredProject, setHoveredProject }) => {
         return (
           <div className="hider">
             <motion.div
-              className='links'
+              className="links"
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
               variants={variants}
@@ -40,27 +40,43 @@ export const ProjectList = ({ list, hoveredProject, setHoveredProject }) => {
                 target="_blank"
                 rel="noreferrer"
                 variants={variants}
-                animate={hoveredProject !== index && hoveredProject !== null
-                  ? "grayOut"
-                  : ''}
+                animate={
+                  hoveredProject !== index && hoveredProject !== null
+                    ? "grayOut"
+                    : ""
+                }
               >
                 <h3>{item.roman}</h3>
                 <h1>{item.name}</h1>
-                <h3>{item.type.toUpperCase()}</h3>
               </motion.a>
 
-              <motion.a
-                className='view-code'
-                href={item.github}
-                target='_blank'
-                rel="noreferrer"
-                variants={variants}
-                animate={hoveredProject !== index && hoveredProject !== null
-                  ? "grayOut"
-                  : ''}
-              >
-                VIEW CODE
-              </motion.a>
+              <div className="type-and-code">
+                <motion.h3
+                  rel="noreferrer"
+                  variants={variants}
+                  animate={
+                    hoveredProject !== index && hoveredProject !== null
+                      ? "grayOut"
+                      : ""
+                  }
+                >
+                  {item.type}
+                </motion.h3>
+                <motion.a
+                  className="view-code"
+                  href={item.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  variants={variants}
+                  animate={
+                    hoveredProject !== index && hoveredProject !== null
+                      ? "grayOut"
+                      : ""
+                  }
+                >
+                  VIEW CODE
+                </motion.a>
+              </div>
             </motion.div>
           </div>
         );

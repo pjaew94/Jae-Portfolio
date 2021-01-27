@@ -40,7 +40,47 @@
         left: 0;
         height: 1px;
         background: $black;
-        width: 70px;
+        width: 4%;
         transform-origin: 0% 50%;
+    }
+}
+
+//
+@media only screen 
+and (min-device-width: 813px) 
+and (max-device-width: 1080px) {
+    .content-landing {
+        .hider {
+            h2 {
+                font-size: $fsLandingText-tablet;
+
+                .link,
+                a {
+                    font-size: $fsLandingText-tablet;
+                }
+            }
+        }
+    }
+}
+
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
+    .content-landing {
+        .hider {
+            h2 {
+                font-size: $fsLandingText-phone;
+                .link,
+                a {
+                    font-size: $fsLandingText-phone;
+                }
+            }
+        }
+
+        .line {
+            display: none;
+        }
     }
 }

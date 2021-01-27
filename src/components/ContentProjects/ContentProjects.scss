@@ -1,0 +1,8 @@
+@import '../../config';
+
+.content-projects { 
+    @include flex(center, center, row);
+    height: 60%;
+    width: 100%;
+
+}

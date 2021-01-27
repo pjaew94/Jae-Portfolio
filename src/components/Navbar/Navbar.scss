@@ -1,0 +1,82 @@
+@import "../../config";
+
+.navbar {
+    width: 100%;
+    @include flex(center, space-between, row);
+    overflow-y: hidden;
+    .left {
+        width: 50%;
+        @include flex(center, space-between, row);
+        .nav-animate-1 {
+            @include primary-font($fsLogo-desktop, 700);
+        }
+        .location {
+            @include primary-font($fsLocation-desktop, 500);
+            letter-spacing: 1px;
+        }
+        .line {
+            height: 1px;
+            background: $black;
+            width: 50px;
+            transform-origin: 0% 50%;
+        }
+    }
+    .right {
+        width: 18%;
+        overflow-y: hidden;
+        @include flex(center, space-between, row);
+
+        .link-container {
+            position: relative;
+            .link {
+                @include secondary-font($fsLinks-desktop, 400);
+                &:after {
+                    display: block;
+                    content: '';
+                    border-bottom: 1px solid $black;
+                    transform: scaleX(0);
+                    transition: 0.5s all ease-in-out;
+                    transform-origin: 0% 50%;
+                }
+                &:hover:after {
+                    transform: scaleX(1)
+                }
+            }
+
+            .bio-underline {
+                border-bottom: 1px solid $black;
+            }
+
+            .projects-underline {
+                border-bottom: 1px solid $white;
+            }
+
+            .white-link {
+                &:after {
+                    display: block;
+                    content: '';
+                    border-bottom: 1px solid $white;
+                    transform: scaleX(0);
+                    transition: 0.5s all ease-in-out;
+                    transform-origin: 0% 50%;
+                }
+                &:hover:after {
+                    transform: scaleX(1)
+                }
+            }
+
+
+        }
+    }
+}
+
+.white {
+    color: $white;
+    .left .line {
+        background: $white;
+    }
+
+    .right .link {
+        color: $white;
+    }
+}

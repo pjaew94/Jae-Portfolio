@@ -1,0 +1,40 @@
+@import "../../../config";
+
+.project-list {
+    @include flex(flex-start, flex-start, column);
+    width: 45%;
+    height: 100%;
+
+    .hider {
+        overflow-y: hidden;
+        .links {
+            @include flex(flex-end, center, row);
+            .project-item {
+                @include flex(flex-end, center, row);
+                padding: 1rem 0;
+                cursor: pointer;
+                text-decoration: none;
+                color: $white;
+
+                h3 {
+                    @include secondary-font(0.7rem, 400);
+                    letter-spacing: 2px;
+                }
+
+                h1 {
+                    @include primary-font(2.5rem, 500);
+                    letter-spacing: 2px;
+                    margin: 0 10px 0 20px;
+                    transform: translateY(5px);
+                }
+            }
+            .view-code {
+                padding: 1rem;
+                @include primary-font(0.9rem, 500);
+                    letter-spacing: 2px;
+                    color: white;
+                    text-decoration: none;
+            }
+        }
+    }
+}

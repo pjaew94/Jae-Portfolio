@@ -1,0 +1,68 @@
+@import '../../config';
+
+.footer {
+    @include flex(center, space-between, row);
+    overflow-y: hidden;
+    width: 100%;
+    .left {
+        @include flex(center, space-between, row);
+        width: 50%;
+        .title {
+            @include primary-font($fsLocation-desktop, 500);
+            letter-spacing: 1px;
+        }
+        .line {
+            height: 1px;
+            background: $black;
+            width: 35px;
+            transform-origin: 0% 50%;
+        }
+    }
+    .right {
+        @include flex(center, space-between, row);
+        width: 18%;
+        a {
+            @include secondary-font($fsLinks-desktop, 400);
+            text-decoration: none;
+            color: $black;
+            &:after {
+                display: block;
+                content: '';
+                border-bottom: 1px solid $black;
+                transform: scaleX(1);
+                transition: 0.5s all ease-in-out;
+                transform-origin: 0% 50%;
+            }
+            &:hover:after {
+                transform: scaleX(0)
+            }
+        }
+        .white-a {
+            &:after {
+                display: block;
+                content: '';
+                border-bottom: 1px solid $white;
+                transform: scaleX(1);
+                transition: 0.5s all ease-in-out;
+                transform-origin: 0% 50%;
+            }
+            &:hover:after {
+                transform: scaleX(0)
+            }
+        }
+        span {
+            width: 33%;
+        }
+    }
+}
+
+.white {
+    color: $white;
+    .left .line {
+        background: $white;
+    }
+
+    .right a {
+        color: $white;
+    }
+}

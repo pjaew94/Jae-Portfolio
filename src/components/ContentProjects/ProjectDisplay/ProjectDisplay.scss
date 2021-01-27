@@ -1,0 +1,53 @@
+@import '../../../config';
+
+.project-display {
+    @include flex(flex-start, center, column);
+    height: 100%;
+    width: 55%;
+    color: $white;
+    
+    .current-project {
+        @include flex(center, center, column);
+        height: 100%;
+        width: 100%;
+        .images {
+            @include flex(flex-end, center, row);
+            height: 80%;
+            width: 80%;
+
+        }
+        .jlc {
+            img:first-child {
+                height: 90%;
+                margin-right: 20px;
+            }
+            img:last-child {
+                height: 80%;
+            }
+        }
+        .pizza {
+            img:first-child {
+                height: 100%;
+                margin-right: 30px;
+            }
+            img:last-child {
+                height: 100%;
+            }
+        }
+
+        .technologies {
+            @include flex(flex-start, center, row);
+            flex-wrap: wrap;
+            height: 20%;
+            width: 80%;
+            padding: 2%;
+
+            h4 {
+                width: 15%;
+                padding: 5px 0;
+                @include secondary-font(0.7rem, 400);
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

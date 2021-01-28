@@ -1,5 +1,4 @@
 import "./ProjectDisplay.scss";
-import { motion } from "framer-motion";
 
 export const ProjectDisplay = ({ list, hoveredProject }) => {
   return (

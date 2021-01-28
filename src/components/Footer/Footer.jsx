@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./Footer.scss";
 import { motion } from "framer-motion";
 

@@ -23,8 +23,8 @@
 
 // Phone portrait
 @media only screen 
-and (min-device-width: 320px) 
-and (max-device-width: 812px) 
+and (min-width: 320px) 
+and (max-width: 812px) 
 and(orientation: portrait) {
     .projects {
         padding: 4vh 6vw;

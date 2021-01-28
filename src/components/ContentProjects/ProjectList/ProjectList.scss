@@ -51,7 +51,7 @@
     }
 }
 
-@media only screen and (min-device-width: 813px) and (max-device-width: 1290px) {
+@media only screen and (min-width: 813px) and (max-width: 1290px) {
     .project-list {
         width: 45%;
         .hider {
@@ -86,7 +86,7 @@
 }
 
 // Phone portrait
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and(orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 812px) and(orientation: portrait) {
     .project-list {
         width: 100%;
         .hider {

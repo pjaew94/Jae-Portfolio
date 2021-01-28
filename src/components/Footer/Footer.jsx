@@ -1,4 +1,5 @@
 import "./Footer.scss";
+import resume from "./Jae Park Resume Dev.docx";
 import { motion } from "framer-motion";
 
 export const Footer = ({ textColor }) => {
@@ -27,7 +28,7 @@ export const Footer = ({ textColor }) => {
       {/* Social Links */}
       <div className="right">
         <motion.a
-        className={textColor === 'white' && 'white-a'}
+          className={textColor === "white" && "white-a"}
           href="https://github.com/pjaew94"
           target="_blank"
           initial={{ y: 50, opacity: 0 }}
@@ -38,7 +39,7 @@ export const Footer = ({ textColor }) => {
           Github
         </motion.a>
         <motion.a
-         className={textColor === 'white' && 'white-a'}
+          className={textColor === "white" && "white-a"}
           href="https://www.linkedin.com/in/jae-park-webdev/"
           target="_blank"
           initial={{ y: 50, opacity: 0 }}
@@ -48,7 +49,17 @@ export const Footer = ({ textColor }) => {
         >
           LinkedIn
         </motion.a>
-        <span></span>
+        <motion.a
+          href={resume}
+          target="_blank"
+          rel="noreferrer"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          exit={{ y: 50, opacity: 0 }}
+        >
+          Resume
+        </motion.a>
       </div>
     </div>
   );

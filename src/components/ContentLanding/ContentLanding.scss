@@ -8,6 +8,7 @@
         overflow-y: hidden;
         padding: 2px;
         h2 {
+            overflow: hidden;
             @include primary-font($fsLandingText-desktop, 500);
             .link {
                 @include primary-font($fsLandingText-desktop, 500);

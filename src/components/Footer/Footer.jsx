@@ -1,6 +1,6 @@
 import "./Footer.scss";
-import resume from "./Jae Park Resume Dev.docx";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 export const Footer = ({ textColor }) => {
   return (
@@ -14,7 +14,7 @@ export const Footer = ({ textColor }) => {
           transition={{ duration: 1, delay: 0.2 }}
           exit={{ y: 50, opacity: 0 }}
         >
-          Full Stack Developer
+          Front End Developer
         </motion.div>
         <motion.div
           className="line"
@@ -49,8 +49,8 @@ export const Footer = ({ textColor }) => {
         >
           LinkedIn
         </motion.a>
-        <motion.a
-          href={resume}
+        <motion.div
+          className='link-container'
           target="_blank"
           rel="noreferrer"
           initial={{ y: 50, opacity: 0 }}
@@ -58,8 +58,10 @@ export const Footer = ({ textColor }) => {
           transition={{ duration: 1, delay: 0.7 }}
           exit={{ y: 50, opacity: 0 }}
         >
+        <Link className={textColor === "white" && "white-a"} to='/resume'>
           Resume
-        </motion.a>
+          </Link>
+        </motion.div>
       </div>
     </div>
   );

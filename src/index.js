@@ -6,10 +6,16 @@ import "./index.scss";
 
 import { Landing } from "./pages/Landing/Landing";
 import { Projects } from "./pages/Projects/Projects";
+import { Resume } from './pages/Resume/Resume';
 
 const App = () => {
   // Sets text color for navbar and footer. Dynamic based on route
   const [textColor, setTextColor] = useState("black");
+
+  const globalProps = {
+    textColor: textColor,
+    setTextColor: setTextColor
+  }
 
   return (
     <div className="app">
@@ -22,9 +28,7 @@ const App = () => {
               path="/"
               render={(props) => (
                 <Landing
-                  {...props}
-                  textColor={textColor}
-                  setTextColor={setTextColor}
+                  {...globalProps}
                   route={""}
                 />
               )}
@@ -34,10 +38,18 @@ const App = () => {
               path="/projects"
               render={(props) => (
                 <Projects
-                  {...props}
-                  textColor={textColor}
-                  setTextColor={setTextColor}
+                  {...globalProps}
                   route={"projects"}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/resume"
+              render={(props) => (
+                <Resume
+                  {...globalProps}
+                  route={'resume'}
                 />
               )}
             />

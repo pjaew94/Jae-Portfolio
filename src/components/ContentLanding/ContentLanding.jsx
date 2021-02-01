@@ -29,7 +29,7 @@ export const ContentLanding = () => {
           exit={{ y: -50, opacity: 0 }}
           variants={variants}
         >
-          I'm Jae, a full stack developer
+          I'm Jae, a front end developer
         </motion.h2>
       </div>
       <div className="hider">

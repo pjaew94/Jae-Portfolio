@@ -14,14 +14,14 @@ const App = () => {
 
   const globalProps = {
     textColor: textColor,
-    setTextColor: setTextColor
+    setTextColor: setTextColor,
   }
 
   return (
     <div className="app">
       <Router>
       <Route render={({ location }) => (
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence initial={false} exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route
               exact

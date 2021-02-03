@@ -4,6 +4,7 @@
     @include flex(center, space-between, row);
     overflow-y: hidden;
     width: 100%;
+    z-index: 2;
     .left {
         @include flex(center, space-between, row);
         width: 50%;
@@ -38,7 +39,10 @@
                 transform: scaleX(0)
             }
         }
+
+
         .white-a {
+            color: $white;
             &:after {
                 display: block;
                 content: '';

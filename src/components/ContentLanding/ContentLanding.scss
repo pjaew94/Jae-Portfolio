@@ -4,6 +4,7 @@
     @include flex(center, center, column);
     position: relative;
     width: 100%;
+    z-index: 2;
     .hider {
         overflow-y: hidden;
         padding: 2px;

@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 
 export const Footer = ({ textColor }) => {
+
+
+
   return (
     <div className={`footer ${textColor === "white" && "white"}`}>
       {/* Title and line */}
@@ -58,7 +61,7 @@ export const Footer = ({ textColor }) => {
           transition={{ duration: 1, delay: 0.7 }}
           exit={{ y: 50, opacity: 0 }}
         >
-        <Link className={textColor === "white" && "white-a"} to='/resume'>
+        <Link to='/resume' className={textColor === "white" && "white-a"}>
           Resume
           </Link>
         </motion.div>

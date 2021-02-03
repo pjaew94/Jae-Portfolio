@@ -4,6 +4,7 @@
     width: 100%;
     @include flex(center, space-between, row);
     overflow-y: hidden;
+    z-index: 2;
     .left {
         width: 50%;
         @include flex(center, space-between, row);

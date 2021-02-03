@@ -3,23 +3,25 @@ import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import { motion } from "framer-motion";
 
-export const Navbar = ({ textColor, setTextColor, route }) => {
+export const Navbar = ({
+  textColor,
+  setTextColor,
+  route,
+}) => {
 
   useEffect(() => {
     if(route === '') {
-      setTextColor('black');
+      setTextColor('black')
     } else {
-      setTextColor('white');
+      setTextColor('white')
     }
-  }, [route, setTextColor])
-
+  }, [setTextColor, route])
+ 
   return (
     <div className={`navbar ${textColor === "white" && "white"}`}>
-
       {/* Logo and Location */}
       <div className="left">
         <motion.div
-          
           className="logo nav-animate-1"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: -5, opacity: 1 }}
@@ -49,35 +51,48 @@ export const Navbar = ({ textColor, setTextColor, route }) => {
       {/* Links container */}
       <div className="right">
         <motion.div
-        className='link-container'
+          className="link-container"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1, borderBottom: 1 }}
           transition={{ duration: 1 }}
           exit={{ y: -50, opacity: 0 }}
         >
-          <Link to='/' className={`link ${route === '' && 'bio-underline'} ${textColor === 'white' && 'white-link'}`}>
+          <Link
+            to='/'
+            className={`link ${route === "" && "bio-underline"} ${
+              textColor === "white" && "white-link"
+            }`}
+          >
             Bio
           </Link>
         </motion.div>
         <motion.div
-        className='link-container'
+          className="link-container"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.1 }}
           exit={{ y: -50, opacity: 0 }}
         >
-          <Link to='/projects' className={`link ${route === 'projects' && 'projects-underline'} ${textColor === 'white' && 'white-link'}`}>
+          <Link
+            to='/projects'
+            className={`link ${route === "projects" && "projects-underline"} ${
+              textColor === "white" && "white-link"
+            }`}
+          >
             Projects
           </Link>
         </motion.div>
         <motion.div
-        className='link-container'
+          className="link-container"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           exit={{ y: -50, opacity: 0 }}
         >
-          <a href='mailto: pjaew94@gmail.com' className={`link ${textColor === 'white' && 'white-link'}`}>
+          <a
+            href="mailto: pjaew94@gmail.com"
+            className={`link ${textColor === "white" && "white-link"}`}
+          >
             Contact
           </a>
         </motion.div>

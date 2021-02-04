@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./Navbar.scss";
 import { motion } from "framer-motion";
 
@@ -7,16 +7,40 @@ export const Navbar = ({
   textColor,
   setTextColor,
   route,
+  bgAnimate,
+  setBgAnimate,
 }) => {
-
   useEffect(() => {
-    if(route === '') {
-      setTextColor('black')
+    if (route === "") {
+      setTextColor("black");
     } else {
-      setTextColor('white')
+      setTextColor("white");
     }
-  }, [setTextColor, route])
- 
+  }, [setTextColor, route]);
+
+  // Initialize history
+  let history = useHistory();
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+  // Change state to change background based on where we are now and where we're headed
+  const bgAnimateThenRoute = async (button) => {
+    if (route === "") {
+      setBgAnimate(true);
+      await delay(100);
+      history.push("/projects");
+    }
+    if (button === "bio") {
+      setBgAnimate(true);
+      await delay(100);
+      history.push("/");
+    }
+    if (route === "resume" && button === "projects") {
+      setBgAnimate(false);
+      await delay(100);
+      history.push("/projects");
+    }
+  };
+
   return (
     <div className={`navbar ${textColor === "white" && "white"}`}>
       {/* Logo and Location */}
@@ -57,14 +81,14 @@ export const Navbar = ({
           transition={{ duration: 1 }}
           exit={{ y: -50, opacity: 0 }}
         >
-          <Link
-            to='/'
+          <button
+            onClick={() => bgAnimateThenRoute("bio")}
             className={`link ${route === "" && "bio-underline"} ${
               textColor === "white" && "white-link"
             }`}
           >
             Bio
-          </Link>
+          </button>
         </motion.div>
         <motion.div
           className="link-container"
@@ -73,14 +97,14 @@ export const Navbar = ({
           transition={{ duration: 1, delay: 0.1 }}
           exit={{ y: -50, opacity: 0 }}
         >
-          <Link
-            to='/projects'
+          <button
+            onClick={() => bgAnimateThenRoute("projects")}
             className={`link ${route === "projects" && "projects-underline"} ${
               textColor === "white" && "white-link"
             }`}
           >
             Projects
-          </Link>
+          </button>
         </motion.div>
         <motion.div
           className="link-container"

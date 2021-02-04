@@ -9,6 +9,8 @@ export const Landing = ({
   textColor,
   setTextColor,
   route,
+  bgAnimate,
+  setBgAnimate
 }) => {
 
 
@@ -19,17 +21,19 @@ export const Landing = ({
         textColor={textColor}
         setTextColor={setTextColor}
         route={route}
-
+        bgAnimate={bgAnimate}
+        setBgAnimate={setBgAnimate}
       />
       <ContentLanding />
       <Footer
         textColor={textColor}
         route={route}
+        bgAnimate={bgAnimate}
+        setBgAnimate={setBgAnimate}
       />
       <motion.div
         className="background"
-        animate={{ top: 0, transition: { duration: 1, delay: 0}}}
-        exit={{top: "-100%", transition: { duration: 1, delay: 1}}}
+        exit={bgAnimate && {top: 0, transition: { duration: 1, delay: 1}}}
       ></motion.div>
     </div>
   );

@@ -11,17 +11,20 @@ import { Resume } from './pages/Resume/Resume';
 const App = () => {
   // Sets text color for navbar and footer. Dynamic based on route
   const [textColor, setTextColor] = useState("black");
+  const [bgAnimate, setBgAnimate] = useState(true);
 
   const globalProps = {
     textColor: textColor,
     setTextColor: setTextColor,
+    bgAnimate: bgAnimate,
+    setBgAnimate: setBgAnimate
   }
 
   return (
     <div className="app">
       <Router>
       <Route render={({ location }) => (
-          <AnimatePresence initial={false} exitBeforeEnter>
+          <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route
               exact

@@ -32,6 +32,9 @@
             position: relative;
             .link {
                 @include secondary-font($fsLinks-desktop, 400);
+                outline: none;
+                border: none;
+                cursor: pointer;
                 &:after {
                     display: block;
                     content: '';

@@ -7,5 +7,16 @@
     width: 100vw;
     padding: 4vh 3vw;
     overflow: hidden;
-    background: $black;
+    background: $white;
+
+
+    .background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: $black;
+        z-index: 1;
+    }
 }

@@ -1,9 +1,24 @@
 import "./Footer.scss";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
-export const Footer = ({ textColor }) => {
+export const Footer = ({ textColor, route, bgAnimate, setBgAnimate }) => {
 
+    // Initialize history
+  let history = useHistory()
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+
+  // Change state to change background based on where we are now and where we're headed
+  const bgAnimateThenRoute = async () => {
+    if(route === '') {
+      setBgAnimate(true);
+      await delay(100)
+    } else {
+      setBgAnimate(false);
+      await delay(100)
+    }
+    history.push('/resume')
+  }
 
 
   return (
@@ -53,7 +68,7 @@ export const Footer = ({ textColor }) => {
           LinkedIn
         </motion.a>
         <motion.div
-          className='link-container'
+          className="link-container"
           target="_blank"
           rel="noreferrer"
           initial={{ y: 50, opacity: 0 }}
@@ -61,9 +76,9 @@ export const Footer = ({ textColor }) => {
           transition={{ duration: 1, delay: 0.7 }}
           exit={{ y: 50, opacity: 0 }}
         >
-        <Link to='/resume' className={textColor === "white" && "white-a"}>
-          Resume
-          </Link>
+          <button onClick={() => bgAnimateThenRoute()} className={textColor === "white" && "white-a"}>
+            Resume
+          </button>
         </motion.div>
       </div>
     </div>

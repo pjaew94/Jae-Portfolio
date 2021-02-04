@@ -40,6 +40,24 @@
             }
         }
 
+        button {
+            @include secondary-font($fsLinks-desktop, 400);
+            outline: none;
+            border: none;
+            cursor: pointer;
+            &:after {
+                display: block;
+                content: '';
+                border-bottom: 1px solid $black;
+                transform: scaleX(1);
+                transition: 0.5s all ease-in-out;
+                transform-origin: 0% 50%;
+            }
+            &:hover:after {
+                transform: scaleX(0)
+            }
+        }
+
 
         .white-a {
             color: $white;

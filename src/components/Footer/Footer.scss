@@ -136,6 +136,11 @@ and(orientation: portrait) {
                 font-size: $fsLinks-phone;
                 font-weight: 500;
             }
+
+            button {
+                font-size: $fsLinks-phone;
+                font-weight: 500;
+            }
         }
     }
 }
